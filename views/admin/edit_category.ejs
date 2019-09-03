@@ -1,0 +1,16 @@
+<% include ../partials/adminHeader %>
+
+<h2 class="page-title">Edit a category<h2>
+<a href="/admin/categories" class="btn btn-primary custom-btn">Back to all categories</a>
+<br><br>
+
+<form action="/admin/categories/edit-category/<%= category._id %>" method="post">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" value="<%= category.title %>" placeholder="Title" class="form-control">
+    </div>
+
+    <button class="btn btn-default custom-btn">Submit</button>
+</form>
+
+<% include ../partials/adminFooter %>

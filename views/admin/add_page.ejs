@@ -1,0 +1,26 @@
+<% include ../partials/adminHeader %>
+
+<h2 class="page-title">Add a page<h2>
+<a href="/admin/pages" class="btn btn-primary custom-btn">Back to all pages</a>
+<br><br>
+
+<form action="/admin/pages/add-page" method="post">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" value="<%= title %>" placeholder="Title" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Slug</label>
+        <input type="text" name="slug" value="<%= slug %>" placeholder="Slug" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Content</label>
+        <textarea class="form-control" id="ta" name="content" cols="30" rows="10" placeholder="Content"><%= content %></textarea>
+    </div>
+
+    <button class="btn btn-default custom-btn">Submit</button>
+</form>
+
+<% include ../partials/adminFooter %>

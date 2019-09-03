@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+<div class="row products p">
+    <% products.forEach(product => { %>
+        <div class="col-xs-12 col-md-4">
+        <div class="custom-bg">
+            <a class="pa" href="/products/<%= product.category %>/<%= product.slug %>">
+                <img class="pimage" src="/product_images/<%= product._id %>/<%= product.image %>" alt="">
+            </a>
+            <h3><%= product.title %></h3>
+            <h4>$<%= parseFloat(product.price).toFixed(2) %></h4>
+            <a class="vd custom-a" href="/products/<%= product.category %>/<%= product.slug %>">View Details</a>
+        </div>
+        </div>
+    <% }); %>
+</div>
+
+<% include partials/footer %>

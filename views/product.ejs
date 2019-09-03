@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="row">
+    <h1 class="page-header"><%= product.title %></h1>
+
+    <div class="col-xs-12 col-md-5">
+        <img class="spi" src="/product_images/<%= product.id %>/<%= product.image %>" alt="">
+        <br>
+    </div>
+
+    <div cla ss="col-xs-12 col-md-7">
+        <p><%= product.description %></p>
+        <p><%= parseFloat(product.price).toFixed(2) %></p>
+        <% if (loggedIn) { %>
+        <p><a class="custom-a" href="/cart/add/<%= product.slug %>">Add to cart</a></p>
+        <% } else { %>
+            <p>You must be logged in to purchase items.</p>
+        <% } %>
+    </div>
+
+    
+
+</div>
+
+<% include partials/footer %>
