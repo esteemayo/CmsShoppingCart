@@ -107,16 +107,12 @@ app.use(passport.session());
 // PASSPORT CONFIG
 require('./config/passport')(passport);
 
-
-
-
 app.use((req, res, next) => {
     res.locals.errors = req.errors;
     res.locals.cart = req.session.cart;
     res.locals.user = req.user || null;
     next();
 });
-
 
 app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
@@ -126,9 +122,6 @@ app.use('/cart', cart);
 app.use('/users', users);
 app.use('/', pages);
 
-
-
-
-const PORT = 9000;
+const PORT = 9090;
 
 app.listen(PORT, () => console.log(`APP LISTENING ON PORT ${PORT}`));
